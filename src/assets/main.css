@@ -60,11 +60,12 @@ select {
 
 input,
 select {
+  -webkit-appearance: none !important;
   padding-inline: 0.7rem;
   padding-block: 0.35rem;
   background-color: transparent;
   border: var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius) !important;
   background: var(--base-color);
   box-shadow: 5px 5px 10px var(--darker-shadow), -5px -5px 10px var(--lighter-shadow);
 }
