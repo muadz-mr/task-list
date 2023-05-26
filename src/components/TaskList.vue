@@ -41,7 +41,7 @@ li:not(:nth-child(1)) {
   border-radius: 16px;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 840px) {
   li {
     margin-inline: 32px;
   }

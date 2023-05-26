@@ -27,9 +27,8 @@ import TaskList from "./components/TaskList.vue";
   padding: 1rem;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 840px) {
   .container {
-    margin-top: 64px;
     border-radius: 1rem;
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
