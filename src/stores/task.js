@@ -17,8 +17,8 @@ export const useTaskStore = defineStore("task", {
   }),
   getters: {
     paginatedTasks: (state) => {
-      let firstIndex = state.pagination.itemPerPage * state.pagination.currentPage - state.pagination.itemPerPage;
-      let lastIndex = state.pagination.itemPerPage * state.pagination.currentPage;
+      const firstIndex = state.pagination.itemPerPage * state.pagination.currentPage - state.pagination.itemPerPage;
+      const lastIndex = state.pagination.itemPerPage * state.pagination.currentPage;
       return state.tasks.slice(firstIndex, lastIndex);
     },
     pages: (state) => {
@@ -32,8 +32,10 @@ export const useTaskStore = defineStore("task", {
       } else if (type === "delete") {
         this.pagination.totalItem--;
       }
-      this.pagination.totalPage = Math.ceil(this.pagination.totalItem / this.pagination.itemPerPage);
-      if (this.pagination.totalPage <= this.pagination.currentPage) {
+
+      this.pagination.totalPage = this.pagination.totalItem > 0 ? Math.ceil(this.pagination.totalItem / this.pagination.itemPerPage) : 1;
+
+      if (this.pagination.totalPage <= this.pagination.currentPage && this.pagination.totalPage > 0) {
         this.pagination.currentPage = this.pagination.totalPage;
       }
     },
