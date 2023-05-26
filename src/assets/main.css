@@ -1,35 +1,69 @@
-@import './base.css';
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+:root {
+  --font-color: #10414b;
+  --base-color: #259ab1;
+  --darker-base-color: #23616d;
+  --border-color: #2597ad;
+  --darker-shadow: #1f8396;
+  --lighter-shadow: #2bb1cc;
+  --disabled-color: #297b8b;
+  --radius: 8px;
+  --font-family: "Nunito", sans-serif;
+  --border: 1px solid var(--border-color);
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+body {
+  background: var(--base-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-weight: 700;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+button {
+  cursor: pointer;
+  padding-inline: 0.7rem;
+  padding-block: 0.35rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--base-color);
+  box-shadow: 5px 5px 10px var(--darker-shadow), -5px -5px 10px var(--lighter-shadow);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+button:disabled {
+  background: var(--base-color);
+  color: var(--disabled-color);
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+button:disabled svg {
+  stroke: var(--disabled-color);
+}
+
+button svg {
+  stroke: var(--font-color);
+  stroke-width: 2px;
+}
+
+button,
+label,
+input,
+select {
+  color: var(--font-color);
+}
+
+input,
+select {
+  padding-inline: 0.7rem;
+  padding-block: 0.35rem;
+  background-color: transparent;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--base-color);
+  box-shadow: 5px 5px 10px var(--darker-shadow), -5px -5px 10px var(--lighter-shadow);
+}
+
+input::placeholder,
+select::placeholder {
+  color: var(--darker-base-color);
 }
